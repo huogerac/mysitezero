@@ -1,0 +1,26 @@
+upstream mysitezero_server {
+    server unix:/tmp/mysitezero_staging.socket;
+}
+
+server {
+    listen 80;
+    server_name mysitezero.na-inter.net;
+    access_log /var/log/nginx/mysitezero.access.log;
+    client_max_body_size 12M;
+
+    location /static {
+        alias /home/mechanics/envs/mysitezero_staging/mysitezero/assets;
+    }
+
+    location /media {
+        alias /home/mechanics/envs/mysitezero_staging/mysitezero/media;
+        expires 10m;
+        autoindex off;
+    }
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_pass http://mysitezero_server;
+    }
+
+}
