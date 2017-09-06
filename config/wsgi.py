@@ -16,6 +16,6 @@ from django.core.wsgi import get_wsgi_application
 app_path = os.path.dirname(os.path.abspath(__file__)).replace('/config', '')
 sys.path.append(os.path.join(app_path, 'apps'))
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysitezero.settings.staging")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.staging")
 
 application = get_wsgi_application()

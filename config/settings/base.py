@@ -66,7 +66,7 @@ FIXTURE_DIRS = (
 # MANAGER CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [
-    ("""admin@domain.com""", 'email@domain.com'),
+    ("""Roger Camargo""", 'roger@na-inter.net'),
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -193,4 +193,5 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Use another url for security
 ADMIN_URL = r'^admin/'
