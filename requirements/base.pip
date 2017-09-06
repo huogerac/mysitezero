@@ -1,1 +1,4 @@
 Django==1.11.4
+
+# Configuration
+django-environ==0.4.4
