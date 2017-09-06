@@ -5,8 +5,8 @@ body {
 
 /* estilo do titulo */
 .ft-title {
-    font-size: 1.3rem;
-    margin-left: 1%;
+    font-size: 3rem;
+    margin-left: 5%;
     margin-right: auto;
 }
 
@@ -22,6 +22,14 @@ body {
     width: 100%;
     z-index: 2;
 }
+.top-fixed .top-header {
+  height: 160px;
+}
+
 .section {
-    padding-top: 125px;
+    padding-top: 230px;
+}
+
+h2.container, h4.container {
+  width: 90%;
 }
