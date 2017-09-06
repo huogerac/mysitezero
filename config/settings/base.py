@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = environ.Path(__file__) - 3
+APPS_DIR = BASE_DIR.path('apps')
 
 # Init something to get environment settings here
 
@@ -107,16 +108,17 @@ SITE_ID = 1
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            str(APPS_DIR.path('templates')),
+        ],
         'OPTIONS': {
             'debug': DEBUG,
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
             #      https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
-            #'loaders': [
-            #    'django.template.loaders.filesystem.Loader',
-            #    'django.template.loaders.app_directories.Loader',
-            #],
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -134,6 +136,7 @@ TEMPLATES = [
 
 # STATIC FILES (CSS, JavaScript, Images)
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
+# After collectstatic command, all static files will be place here:
 STATIC_ROOT = str(BASE_DIR('staticfiles'))
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
@@ -141,7 +144,7 @@ STATIC_URL = '/static/'
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
-    # str(APPS_DIR.path('static')),
+    str(APPS_DIR.path('static')),
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
@@ -189,3 +192,5 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+ADMIN_URL = r'^admin/'

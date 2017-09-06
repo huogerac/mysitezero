@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block content %}
+
+  <div class="top-fixed z-depth-1">
+      <div class="valign-wrapper yellow darken-4 white-text">
+          <h5 class="ft-title">Django Project</h5>
+
+          <div>
+              <i class="material-icons waves-effect waves-light
+                        waves-circle dropdown-button"
+                  data-activates="submenu" data-gutter="5"
+                  data-constrainwidth="false">more_vert</i>
+          </div>
+      </div>
+
+      <ul class="tabs yellow darken-4">
+          <li class="tab">
+              <a href="#getstarted"
+                  class="tab-item white-text waves-effect waves-light">Get started</a>
+          </li>
+          <li class="tab">
+              <a href="#djangoadmin"
+                  class="tab-item white-text waves-effect waves-light">Django Admin</a>
+          </li>
+      </ul>
+  </div>
+
+  <div id="getstarted" class="section">
+      <h2 class="container brown-text">Django Documentation</h2>
+      <h4 class="container brown-text">Layers (MTV)</h4>
+      <div class="collection">
+          <a href="https://docs.djangoproject.com/en/1.11/#the-model-layer"
+             class="collection-item waves-effect black-text">Model Layer</a>
+          <a href="https://docs.djangoproject.com/en/1.11/#the-view-layer"
+             class="collection-item waves-effect black-text">View Layer</a>
+          <a href="https://docs.djangoproject.com/en/1.11/#the-template-layer"
+             class="collection-item waves-effect black-text">Template Layer</a>
+          <a href="https://docs.djangoproject.com/en/1.11/#forms"
+             class="collection-item waves-effect black-text">Forms</a>
+      </div>
+      <h4 class="container brown-text">Others</h4>
+      <div class="collection">
+          <a href="https://docs.djangoproject.com/en/1.11/#common-web-application-tools"
+             class="collection-item waves-effect black-text">Caching, Logging, Pagination ...</a>
+      </div>
+      <h4 class="container brown-text">Credits / Dependencies</h4>
+      <div class="collection">
+          <a href="https://www.djangoproject.com/start/"
+             class="collection-item waves-effect black-text">Django</a>
+          <a href="https://github.com/pydanny/cookiecutter-django"
+             class="collection-item waves-effect black-text">Cookiecutter Django</a>
+          <a href="http://materializecss.com/"
+             class="collection-item waves-effect black-text">Materialize CSS</a>
+      </div>
+
+  </div>
+
+  <div id="djangoadmin" class="section">
+      <h2 class="container brown-text">Admin</h2>
+      <div class="collection">
+          <a href="{% url 'admin:index' %}"
+             class="collection-item waves-effect black-text">Admin</a>
+          <a href="https://docs.djangoproject.com/en/1.11/#the-admin"
+             class="collection-item waves-effect black-text">Admin Docs</a>
+
+      </div>
+
+  </div>
+
+{% endblock content %}
+
+
+{% block extra_javascript %}
+
+  <script src="{% static 'js/index.js' %}"></script>
+
+{% endblock extra_javascript %}
+
