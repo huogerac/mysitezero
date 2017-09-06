@@ -9,7 +9,7 @@ server {
     client_max_body_size 12M;
 
     location /static {
-        alias /home/mechanics/envs/mysitezero_staging/mysitezero/assets;
+        alias /home/mechanics/envs/mysitezero_staging/mysitezero/staticfiles;
     }
 
     location /media {

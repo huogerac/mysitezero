@@ -5,7 +5,7 @@ stop on shutdown
 
 respawn
 setuid mechanics
-env DJANGO_SETTINGS_MODULE=mysitezero.settings
+env DJANGO_SETTINGS_MODULE=config.settings.staging
 
 env MYSITEZERO_DB_NAME='mysitezero'
 env MYSITEZERO_DB_USER='mysitezero'
@@ -13,7 +13,7 @@ env MYSITEZERO_DB_PASSWORD='ch4ng3th1s!'
 env MYSITEZERO_DB_HOST='localhost'
 
 chdir /home/mechanics/envs/mysitezero_staging/mysitezero
-exec ../bin/gunicorn mysitezero.wsgi:application \
+exec ../bin/gunicorn config.wsgi:application \
   --name "mysitezero_staging" \
   --workers 1 \
   --timeout 200 \
